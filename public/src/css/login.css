@@ -1,0 +1,186 @@
+:root {
+    --Background: #F0F3FD;
+    --FullHeight: 100vh;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+    overflow: hidden;
+}
+
+body {
+    height: var(--FullHeight);
+    width: 100%;
+    background: #F0F3FD;
+}
+
+#loginWrapper {
+    position: absolute;
+    color: #5976CA;
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 60px 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    height: min-content;
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.titleText {
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+}
+
+#loginWrapper input {
+    color: #5976CA;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    border-bottom: 3px solid #5976CA;
+    transition: 0.1s ease-in-out;
+    margin-bottom: 25px;
+}
+
+#loginWrapper input:focus {
+    border-bottom: 3px solid #C958B0;
+    outline: none;
+}
+
+#loginWrapper input::placeholder {
+    color: #5976CA;
+    opacity: 0.9;
+}
+
+#forgotpsw {
+    font-size: 1.3rem;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    margin-bottom: 25px;
+}
+
+.forgotpsw:hover {
+    color: rgb(45, 140, 241);
+}
+
+.noLogin {
+    font-size: 1.1rem;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    color: #FFFFFF;
+}
+
+.noLogin:hover {
+    color: rgb(45, 140, 241);
+}
+
+#loginBtn {
+    background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    width: max-content;
+    margin-left: 29%;
+    padding: 10px 50px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased; 
+    transition: 0.2s ease;
+}
+
+#loginBtn:hover {
+    transform: scale(1.048);
+}
+
+@media only screen and (max-width: 400px) {
+    .loginWrapper {
+        padding: 10px 10px;
+    }
+}
+
+#forgotPasswordWrapper {
+    right: -500px;
+    position: absolute;
+    color: #FFFFFF;
+    backdrop-filter: blur(10px) saturate(45%);
+    border-radius: 30px;
+    padding: 30px 60px;
+    transform: translate(50%, -50%);
+    top: 50%;
+    height: min-content;
+    display: flex;
+    width: 250px;
+    flex-direction: column;
+    text-align: left;
+    transition: 0.4s ease;
+}
+
+.forgotTitle {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.forgotTitleText {
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+#forgotPasswordWrapper input {
+    color: #FFFFFF;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #FFFFFF;
+    transition: 0.1s ease-in-out;
+    margin-bottom: 20px;
+}
+
+#forgotPasswordWrapper input:focus {
+    border-bottom: 2px solid rgb(45, 140, 241);
+    outline: none;
+}
+
+#forgotPasswordWrapper input::placeholder {
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+
+#forgotBtn {
+    background: rgb(45, 140, 241);
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 10px 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased; 
+    transition: 0.2s ease;
+}
+
+#forgotBtn:hover {
+    transform: scale(1.048);
+}
+
+#forgotSuccess {
+    font-size: 1rem;
+}
