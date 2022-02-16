@@ -30,6 +30,7 @@ body {
     width: 400px;
     flex-direction: column;
     text-align: center;
+    align-items: center;
     transition: 0.4s ease;
 }
 
@@ -79,7 +80,6 @@ body {
 }
 
 
-/* TODO: Add grid */
 
 #roomBtn {
     background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
@@ -90,7 +90,6 @@ body {
     border-radius: 15px;
     margin-bottom: 25px;
     width: max-content;
-    margin-left: 20%;
     padding: 10px 50px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased; 
