@@ -1,0 +1,130 @@
+:root {
+    --Background: #F0F3FD;
+    --FullHeight: 100vh;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+    overflow: hidden;
+}
+
+body {
+    height: var(--FullHeight);
+    width: 100%;
+    background: #F0F3FD;
+}
+
+#createWrapper {
+    position: absolute;
+    color: #5976CA;
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 60px 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    height: min-content;
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+.sectionText {
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.titleText {
+    font-weight: 500;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#createWrapper input {
+    color: #5976CA;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    border-bottom: 3px solid #5976CA;
+    transition: 0.1s ease-in-out;
+    margin-bottom: 25px;
+}
+
+#createWrapper input:focus {
+    border-bottom: 3px solid #C958B0;
+    outline: none;
+}
+
+#createBtn {
+    background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-top: 25px;
+    width: max-content;
+    padding: 10px 50px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased; 
+    transition: 0.2s ease;
+}
+
+#createBtn:hover {
+    transform: scale(1.048);
+}
+
+#gendWrapper {
+    flex-direction: row;
+}
+
+.gendBtn {
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 25px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased; 
+    transition: 0.2s ease;
+}
+
+#activeBtn {
+    color: #5A76CA;
+    background-color: #F0F3FD;
+    border-color: #5A76CA;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#inactiveBtn {
+    color: #F0F3FD;
+    background-color: #5A76CA;
+}
+
+#interestWrapper {
+    display: flex;
+    border-color: #5A76CA;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 15px;
+    width: 300px;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+}
+
+#interestWrapper input {
+    margin: 5px 5px;
+}
+
+#interestWrapper label {
+    margin-right: 5px;
+}

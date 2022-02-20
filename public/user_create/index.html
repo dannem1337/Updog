@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <head>
+        <title>Updog</title>
+        <meta charset="utf-8"/>
+       
+    </head>
+    <body>
+
+        <!-- TODO: add updating counter and active button in js, and startEvent function-->
+        <div id="createWrapper">
+            <p class="titleText">Create an account</p>
+            <input type="text" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <div id="gendWrapper">
+                <p class=sectionText>Gender</p>
+                <button onclick="changeGender(this)" value="male" id="activeBtn" class="gendBtn">Male</button>
+                <button onclick="changeGender(this)" value="female" id="inactiveBtn" class="gendBtn">Female</button>
+            </div>
+            <p class=sectionText>Interests</p>
+            <div id="interestWrapper">
+                <input type="checkbox" class="interest" name="gaming">
+                <label for="gaming">Gaming</label>
+                <input type="checkbox" class="interest" name="sports">
+                <label for="sports">Sports</label>
+                <input type="checkbox" class="interest" name="food">
+                <label for="food">Food</label>
+                <input type="checkbox" class="interest" name="music">
+                <label for="music">Music</label>
+                <input type="checkbox" class="interest" name="hiking">
+                <label for="hiking">Hiking</label>
+            </div>
+            <button onclick="createAccount()" id="createBtn">Create account</button>
+        </div>
+
+        <script type="text/javascript" src="createAccount.js"></script>
+    </body>
+</html>
