@@ -16,7 +16,7 @@ body {
     background: #F0F3FD;
 }
 
-#roomWrapper {
+#createWrapper {
     position: absolute;
     color: #5976CA;
     background: #FFFFFF;
@@ -34,18 +34,19 @@ body {
     transition: 0.4s ease;
 }
 
-.title {
-    font-size: 3.5rem;
-    font-weight: 700;
+.sectionText {
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
 }
 
 .titleText {
     font-weight: 500;
-    font-size: 1.7rem;
-    margin-bottom: 25px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-#roomWrapper input {
+#createWrapper input {
     color: #5976CA;
     font-size: 1.5rem;
     border: none;
@@ -55,39 +56,75 @@ body {
     margin-bottom: 25px;
 }
 
-#roomWrapper input:focus {
+#createWrapper input:focus {
     border-bottom: 3px solid #C958B0;
     outline: none;
 }
 
-#roomWrapper input::placeholder {
-    color: #5976CA;
-    opacity: 0.9;
-}
-
-
-#roomBtn {
+#createBtn {
     background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
     border: none;
     color: #FFFFFF;
     font-size: 1.4rem;
     cursor: pointer;
     border-radius: 15px;
-    margin-bottom: 25px;
+    margin-top: 25px;
     width: max-content;
     padding: 10px 50px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased; 
     transition: 0.2s ease;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#roomBtn:hover {
+#createBtn:hover {
     transform: scale(1.048);
 }
 
-@media only screen and (max-width: 400px) {
-    .roomWrapper {
-        padding: 10px 10px;
-    }
+#gendWrapper {
+    flex-direction: row;
+}
+
+.gendBtn {
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 150px;
+    height: 50px;
+    margin-bottom: 25px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased; 
+    transition: 0.2s ease;
+}
+
+#activeBtn {
+    color: #5A76CA;
+    background-color: #F0F3FD;
+    border-color: #5A76CA;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#inactiveBtn {
+    color: #F0F3FD;
+    background-color: #5A76CA;
+}
+
+#interestWrapper {
+    display: flex;
+    border-color: #5A76CA;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 15px;
+    width: 300px;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+}
+
+#interestWrapper input {
+    margin: 5px 5px;
+}
+
+#interestWrapper label {
+    margin-right: 5px;
 }

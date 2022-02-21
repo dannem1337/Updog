@@ -12,8 +12,6 @@ let email;
 var forgotPasswordButton = document.getElementById("forgotpsw"),
   forgotPasswordWrapper = document.getElementById("forgotPasswordWrapper"),
   loginWrapper = document.getElementById("loginWrapper");
-
-
 window.onload = (e => {
 
   usr = document.getElementById("usrname");

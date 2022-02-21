@@ -2,6 +2,10 @@ body{
     background: #F0F3FD;
 }
 
+#body {
+    position: absolute;
+}
+
 #form {
     position: absolute;
     width: 979px;
