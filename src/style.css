@@ -14,7 +14,7 @@ body{
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    
+
     background: #FFFFFF;
     border-radius: 40px;
 }
@@ -27,7 +27,7 @@ input[type=text], select, textarea {
     border-right: 0px solid;
     border-bottom: 2px solid;
     border-color: #899DE0;
-    padding: 12px; /* Some padding */ 
+    padding: 12px; /* Some padding */
     margin-left: 38px ;
     margin-top: 10%;
 }
@@ -53,9 +53,9 @@ input::-webkit-input-placeholder {
     font-size: 64px;
     line-height: 75px;
     /* identical to box height */
-    
-    
-     color: #FFFFFF; 
+
+
+     color: #FFFFFF;
 }
 
 #createRoom {
@@ -67,9 +67,8 @@ input::-webkit-input-placeholder {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    
+
     background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
 }
-
