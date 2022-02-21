@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../__src/css/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <title>Updog</title>
@@ -12,25 +12,20 @@
 
     <!-- Test account: Username: test.account@mail.com Password: admin1 -->
 
-    <!-- TODO: add onclick="createRoom in js"-->
-    <button onclick="profile()" id="profile" aria-expanded="false">
-        <p id="name">User Name</p>
-        <span class="dot"></span>
-    </button>
-
-    <div id="roomWrapper">
-        <p>CURRENT ROOMS</p>
-        <br>
-        <div id="room1">
-            <p id="eventName">Hot Singles</p>
-            <p id="noPart"> 5/10 </p> 
-            <button onclick="joinRoom()" id="joinBtn">Join </button>
-        </div>
-        <div id="room1">
-            <p id="eventName">Food Lovers</p>
-            <p id="noPart"> 0/10 </p> 
-            <button onclick="joinRoom()" id="joinBtn">Join </button>
-        </div>
+    <div id="loginWrapper">
+        <p class="titleText"><span class="title">What's Updog?</span><br>Log in to your account</p>
+        <input type="text" id="usrname" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <p id="forgotpsw">Forgot password?</p>
+        <button onclick="login()" id="loginBtn">Log in</button>
+    </div>
+    
+    <div id="forgotPasswordWrapper">
+        <p class="forgotTitle">Forgot password?</p>
+        <p class="forgotTitleText">Enter your email to reset password</p>
+        <input type="text" id="email" placeholder="Email">
+        <span id="forgotBtn">Reset my password</span>
+        <p id="forgotSuccess"></p>
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -62,6 +57,6 @@
 
     </script>
 
-    <script src="src/js/login.js"></script>
+    <script src="../__src/js/login.js"></script>
 </body>
 </html>
