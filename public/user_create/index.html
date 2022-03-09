@@ -34,9 +34,36 @@
                 <input type="checkbox" class="interest" name="hiking">
                 <label for="hiking">Hiking</label>
             </div>
-            <button onclick="createAccount()" id="createBtn">Create account</button>
+            <button id="createBtn">Create account</button>
         </div>
 
-        <script type="text/javascript" src="createAccount.js"></script>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
+            import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
+          
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            const firebaseConfig = {
+              apiKey: "AIzaSyDooJTS_-2Rf5ZaqMTLeFWiCJdLxo0vKG0",
+              authDomain: "updog-74cf9.firebaseapp.com",
+              projectId: "updog-74cf9",
+              storageBucket: "updog-74cf9.appspot.com",
+              messagingSenderId: "856245107877",
+              appId: "1:856245107877:web:6b039fe3eedd2c9341214c",
+              measurementId: "G-1BN6G28E5L"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+            const auth = getAuth();
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js"></script>
+
+        <script src="createAccount.js"></script>
     </body>
 </html>

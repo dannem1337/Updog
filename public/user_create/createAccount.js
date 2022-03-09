@@ -1,6 +1,9 @@
-import { collection, addDoc } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
+/**@type {HTMLInputElement} */
+let createAccountButton;
+/**@type {HTMLInputElement} */
+let password;
+/**@type {HTMLInputElement} */
+let email;
 
 function changeGender(button) {
     otherButton = document.getElementById("activeBtn");
@@ -10,16 +13,42 @@ function changeGender(button) {
     }
 }
 
+let auth = getAuth();
+var user = auth.currentUser;
+console.log("dealing with " + user); 
+
+window.onload = (e => {
+
+    var createAccountButton = document.getElementById("createBtn");
+
+    console.log("Hellu");
+
+    createAccountButton.onclick = (e => {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        const auth = getAuth();
+        var user = auth.currentUser;
+        console.log("dealing with " + user);    
+    
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+    
+        console.log("dealing with " + user); 
+    });
+})
+
 function createAccount() {
     const db = getDatabase();
-    const auth = getAuth();
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
+    
+}
 
-    createUserWithEmailAndPassword(auth, email.value, password.value)
-        .then((userCredential) => {
-
-            var name = document.getElementById("displayName");
+/* var name = document.getElementById("displayName");
             var gender = docment.getElementById("inactiveBtn");
             var allInterests = document.getElementsByClassName("interest");
             var chosenInterests = [];
@@ -32,11 +61,4 @@ function createAccount() {
                 Name: name.value,
                 Gender: gender.value,
                 Interests: interests
-            }
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-        });
-    
-}
+            } */
