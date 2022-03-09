@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="userpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>Updog</title>
+</head>
+<body>
+
+    <!-- Test account: Username: test.account@mail.com Password: admin1 -->
+    <div id="logo">
+        <img src="../../resources/Updog Desktop Logo.svg">
+    </div>
+    <div id="informationWrapper">
+        <img class="pfp">
+        <h1 id="yourinfo">Your information</h1>
+        <button id="update">Update</button>
+    </div>
+    
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    
+        
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
+
+        // TODO: Replace the following with your app's Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDooJTS_-2Rf5ZaqMTLeFWiCJdLxo0vKG0",
+            authDomain: "updog-74cf9.firebaseapp.com",
+            projectId: "updog-74cf9",
+            storageBucket: "updog-74cf9.appspot.com",
+            messagingSenderId: "856245107877",
+            appId: "1:856245107877:web:6b039fe3eedd2c9341214c",
+            measurementId: "G-1BN6G28E5L"
+        };
+
+        const app = initializeApp(firebaseConfig);
+      </script>
+
+    </script>
+
+    <script src="userpage.js"></script>
+</body>
+</html>

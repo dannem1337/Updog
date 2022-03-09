@@ -1,0 +1,67 @@
+:root {
+    --Background: #F0F3FD;
+    --FullHeight: 100vh;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+    overflow: hidden;
+}
+
+body {
+    height: var(--FullHeight);
+    width: 100%;
+    background: #F0F3FD;
+    display: flex;
+    flex-direction: column;
+}
+
+#informationWrapper {
+    position: absolute;
+    border-radius: 30px;
+    background-color: #FFFFFF;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    display: grid;
+    width: 40%;
+    height: 15%;
+    padding: 5% 5%;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+    "pfp yourinfo"
+    "pfp changebtn";
+}
+
+.pfp {
+    width: 10%;
+    height: 100%;
+    grid-column-start: pfp;
+}
+
+#yourinfo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #5976CA;
+    grid-area: yourinfo;
+}
+
+#update {
+    grid-area: "changebtn";
+    background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    width: max-content;
+    margin-left: 29%;
+    padding: 10px 50px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased; 
+    transition: 0.2s ease;
+}

@@ -1,0 +1,107 @@
+:root {
+    --Background: #F0F3FD;
+    --FullHeight: 100vh;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+    overflow: hidden;
+}
+
+body {
+    height: var(--FullHeight);
+    width: 100%;
+    background: #F0F3FD;
+}
+
+#roomWrapper {
+    position: absolute;
+    color: #5976CA;
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 60px 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    height: min-content;
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.titleText {
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+}
+
+#roomWrapper input {
+    color: #5976CA;
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    border-bottom: 3px solid #5976CA;
+    transition: 0.1s ease-in-out;
+    margin-bottom: 25px;
+}
+
+#roomWrapper input:focus {
+    border-bottom: 3px solid #C958B0;
+    outline: none;
+}
+
+#roomWrapper input::placeholder {
+    color: #5976CA;
+    opacity: 0.9;
+}
+
+
+
+.noLogin {
+    font-size: 1.1rem;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    color: #FFFFFF;
+}
+
+.noLogin:hover {
+    color: rgb(45, 140, 241);
+}
+
+
+
+#roomBtn {
+    background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    width: max-content;
+    padding: 10px 50px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased; 
+    transition: 0.2s ease;
+}
+
+#roomBtn:hover {
+    transform: scale(1.048);
+}
+
+@media only screen and (max-width: 400px) {
+    .roomWrapper {
+        padding: 10px 10px;
+    }
+}
