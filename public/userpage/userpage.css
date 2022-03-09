@@ -18,14 +18,23 @@ body {
     flex-direction: column;
 }
 
+#logo {
+    width: 15%;
+    height: 15%;
+    left: 50%;
+    top: 1%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
 #informationWrapper {
     position: absolute;
     border-radius: 30px;
     background-color: #FFFFFF;
     left: 50%;
-    top: 5%;
+    top: 15%;
     transform: translateX(-50%);
-    display: grid;
+    display: inline-grid;
     width: 40%;
     height: 15%;
     padding: 5% 5%;
@@ -33,24 +42,39 @@ body {
     grid-template-rows: 50% 50%;
     grid-template-areas: 
     "pfp yourinfo"
-    "pfp changebtn";
+    "pfp change";
 }
 
-.pfp {
-    width: 10%;
-    height: 100%;
+#pfp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
     grid-column-start: pfp;
+    border-radius: 50%;
 }
 
 #yourinfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 2.5rem;
     font-weight: 700;
     color: #5976CA;
     grid-area: yourinfo;
+    left: 50%;
+    text-align: center;
+    line-height: 100%;
 }
 
 #update {
-    grid-area: "changebtn";
+    display: flex;
+    align-items: center;
+    grid-area: change;
+    left: 50%;
+    transform: translateX(50%);
+    top: 50%;
     background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
     border: none;
     color: #FFFFFF;
@@ -59,7 +83,6 @@ body {
     border-radius: 15px;
     margin-bottom: 25px;
     width: max-content;
-    margin-left: 29%;
     padding: 10px 50px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased; 
