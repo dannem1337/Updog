@@ -1,0 +1,78 @@
+:root {
+    --Background: #F0F3FD;
+    --FullHeight: 100vh;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+    overflow: hidden;
+}
+
+body {
+    height: var(--FullHeight);
+    width: 100%;
+    background: #F0F3FD;
+}
+
+#roomWrapper {
+    position: absolute;
+    color: #5976CA;
+    background: #FFFFFF;
+    border-radius: 30px 30px 30px 00px;
+    padding: 30px 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    height: min-content;
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+#wait {
+    font-size: 1.8rem;
+    top: 40%;
+    margin-bottom: 40px;
+    
+}
+
+#currently {
+    font-size: 1rem;
+    top: 80%;
+    margin-bottom: 0;
+}
+
+#roomBtn {
+    background: grey;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    width: max-content;
+    padding: 10px 50px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased; 
+    transition: 0.2s ease;
+}
+
+#roomBtn:hover {
+    transform: none;
+}
+
+#logo {
+    height: auto;
+    width: 10%;
+    position: absolute;
+    top: 55%;
+    transform: translateY(40%);
+    left: 21%;
+    object-position: center top;
+
+}
