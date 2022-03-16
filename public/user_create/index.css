@@ -128,3 +128,11 @@ body {
 #interestWrapper label {
     margin-right: 5px;
 }
+
+.radio {
+    height: 0.6em;
+}
+
+#femaleChoice {
+    left: 100px;
+}

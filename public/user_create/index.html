@@ -1,41 +1,96 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-    <head>
-        <title>Updog</title>
-        <meta charset="utf-8"/>
-       
-    </head>
-    <body>
+    <title>Create your account</title>
 
-        <!-- TODO: add updating counter and active button in js, and startEvent function-->
-        <div id="createWrapper">
-            <p class="titleText">Create an account</p>
-            <input type="text" id="email" placeholder="Email">
-            <input type="password" id="password" placeholder="Password">
-            <div id="gendWrapper">
-                <p class=sectionText>Gender</p>
-                <button onclick="changeGender(this)" value="male" id="activeBtn" class="gendBtn">Male</button>
-                <button onclick="changeGender(this)" value="female" id="inactiveBtn" class="gendBtn">Female</button>
-            </div>
-            <p class=sectionText>Interests</p>
-            <div id="interestWrapper">
-                <input type="checkbox" class="interest" name="gaming">
-                <label for="gaming">Gaming</label>
-                <input type="checkbox" class="interest" name="sports">
-                <label for="sports">Sports</label>
-                <input type="checkbox" class="interest" name="food">
-                <label for="food">Food</label>
-                <input type="checkbox" class="interest" name="music">
-                <label for="music">Music</label>
-                <input type="checkbox" class="interest" name="hiking">
-                <label for="hiking">Hiking</label>
-            </div>
-            <button onclick="createAccount()" id="createBtn">Create account</button>
-        </div>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.6.8/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.6.8/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+  <body>
+    <div id="createWrapper">
+      <p class="titleText">Create an account</p>
+      <input type="text" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <input type="test" id="displayName" placeholder="Display name"> 
+      <div id="gendWrapper">
+          <p class=sectionText>Gender</p>
+          <button onclick="changeGender(this)" value="male" id="activeBtn" class="gendBtn">Male</button>
+          <button onclick="changeGender(this)" value="female" id="inactiveBtn" class="gendBtn">Female</button>
+      </div>
+      <p class=sectionText>Interests</p>
+      <div id="interestWrapper">
+          <input type="checkbox" class="interest" name="gaming">
+          <label for="gaming">Gaming</label>
+          <input type="checkbox" class="interest" name="sports">
+          <label for="sports">Sports</label>
+          <input type="checkbox" class="interest" name="food">
+          <label for="food">Food</label>
+          <input type="checkbox" class="interest" name="music">
+          <label for="music">Music</label>
+          <input type="checkbox" class="interest" name="hiking">
+          <label for="hiking">Hiking</label>
+      </div>
+      <button id="createBtn" onclick="handleSignUp(), updateFirestore()">Create account</button>
+  </div>
 
-        <script type="text/javascript" src="createAccount.js"></script>
-    </body>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+    <script src="createAccount.js"></script>
+  </body>
 </html>
