@@ -21,7 +21,7 @@ body {
     color: #5976CA;
     background: #F0F3FD;
     border-radius: 30px;
-    padding: 60px 60px;
+    padding: 60px 100px;
     left: 50%;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -40,11 +40,11 @@ body {
     color: #FFFFFF;
     font-size: 1.4rem;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 50em;
     margin-bottom: 25px;
     width: 40vh;
     height: 7vh;
-    padding: 10px 50px;
+    padding: 10px 40px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased; 
     transition: 0.2s ease;
@@ -60,7 +60,7 @@ body {
 }
 
 #upDog{
-    width: 30%;
+    width: 25em;
     margin-top: 8%;
 }
 
