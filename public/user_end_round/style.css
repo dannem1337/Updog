@@ -1,0 +1,146 @@
+:root {
+    --Background: #F0F3FD;
+    --FullHeight: 100vh;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+    overflow: hidden;
+}
+
+body {
+    height: var(--FullHeight);
+    width: 100%;
+    background: #F0F3FD;
+}
+
+#header {
+    position: absolute; 
+    display: grid;
+    flex-direction: row;
+    padding: 40px 60px;
+    left: 10%;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    "dog . bubble";
+}
+
+#upDog {
+    grid-area: "dog";
+    width: 90%;
+}
+
+#speakBubble {
+    grid-area: "bubble";
+    background-color: #FFFFFF;
+    color: #5976CA;
+    border-radius: 30px 30px 30px 0;
+    width: 80%; 
+    text-align: center;
+    padding-top: 9%;
+    padding-bottom: 9%;
+    height: fit-content;
+    margin-left: 5%;
+}
+
+#text {
+    font-size: 200%;
+}
+
+#roomWrapper {
+    font-size: 3rem;
+    position: absolute;
+    color: #5976CA;
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 40px 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 65%;
+    height: min-content;
+    display: flex;
+    width: 600px;
+    margin-top: 30px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+.rate {
+    margin-top: 20px;
+    float: left;
+    height: 80px;
+    padding: 0 10px;
+}
+
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color: #E3E9FD;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #CB58C0;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #CB58C0;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #CB58C0;
+}
+
+#comment {
+    margin-top: 50px;
+    border-color: #5976CA;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1.3rem;
+}
+
+#comment:focus {
+    outline: none !important;
+}
+
+#next {
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
+    color: #FFFFFF;
+    border-radius: 30px;
+    margin-top: 50px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 50%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased; 
+    transition: 0.2s ease;
+    float: right;
+}
+
+@media only screen and (max-width: 400px) {
+    .roomWrapper {
+        padding: 10px 10px;
+    }
+}

@@ -71,13 +71,14 @@ function joinRoom(roomid) {
         console.log(participants);
     });
 
+    window.alert("Please join this room on Zoom: https://uu-se.zoom.us/j/2797007418");
+
     var timeleft = 10;
     var downloadTimer = setInterval(function(){
     if(timeleft <= 0){
         clearInterval(downloadTimer);
-        document.getElementById("countdown").innerHTML = "Round 2 starting";
-        window.alert("Please join this room on Zoom: https://uu-se.zoom.us/j/2797007418");
-        location.href("event_end_user");
+        document.getElementById("countdown").innerHTML = "Round 1 finished";
+        location.href("../user_end_round");
     } else {
         document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
     }
