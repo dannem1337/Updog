@@ -28,7 +28,7 @@ window.onload = (e => {
       return firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
         firebase.auth().onAuthStateChanged(user => {
           if (user) {
-            location.href = "index.html";
+            location.href = "../join_room";
           }
         });
       }).catch(error => {

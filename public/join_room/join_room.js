@@ -2,6 +2,23 @@ window.onload = () => {
 
     const db = firebase.firestore();
 
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            var uid = user.email;
+            
+            console.log(uid);
+
+            db.collection("users").doc(uid).onSnapshot((doc) => {
+                var username = doc.data().Name;
+                const removed = username.replaceAll('"', '');
+                document.getElementById("name").innerHTML = removed;
+                console.log(username);
+            });
+          }
+    });
+
     db.collection("rooms").get().then((querySnapshot) => {
         var i = 0;
         querySnapshot.forEach((doc) => {
@@ -29,6 +46,7 @@ window.onload = () => {
         console.log("Error getting documents: ", error);
     });
 }
+    
 
 function joinRoom(roomid) {
     const db = firebase.firestore();
@@ -57,7 +75,9 @@ function joinRoom(roomid) {
     var downloadTimer = setInterval(function(){
     if(timeleft <= 0){
         clearInterval(downloadTimer);
-        document.getElementById("countdown").innerHTML = "Room starting";
+        document.getElementById("countdown").innerHTML = "Round 2 starting";
+        window.alert("Please join this room on Zoom: https://uu-se.zoom.us/j/2797007418");
+        location.href("event_end_user");
     } else {
         document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
     }
