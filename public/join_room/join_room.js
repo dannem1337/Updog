@@ -39,9 +39,9 @@ window.onload = () => {
         // doc.data() is never undefined for query doc snapshots
         console.log(doc.id, " => ", doc.data());
 
-    });
+        });
 
-})
+    })
         .catch((error) => {
         console.log("Error getting documents: ", error);
     });
@@ -78,7 +78,7 @@ function joinRoom(roomid) {
     if(timeleft <= 0){
         clearInterval(downloadTimer);
         document.getElementById("countdown").innerHTML = "Round 1 finished";
-        location.href("../user_end_round");
+        location.href = "../user_end_round";
     } else {
         document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
     }

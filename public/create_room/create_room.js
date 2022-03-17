@@ -42,3 +42,7 @@ function waitRoom(roomName) {
         document.getElementById("females").innerHTML = "Female participants: " + data.FemaleParticipants + "/10";
     });
 }
+
+function startRoom() {
+    location.href = "../event_end_admin";
+}
