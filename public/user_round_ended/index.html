@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>Updog</title>
+</head>
+<body>
+
+    <!-- Test account: Username: test.account@mail.com Password: admin1 -->
+
+    <!-- TODO: add onclick="createRoom in js"-->
+    <div id="header">
+        <img src="../../resources/dog.png" id="upDog">
+        <div id="speakBubble">
+            <p id="text">ROUND 1 DONE!</p>
+        </div>
+    </div>
+
+    <div id="roomWrapper">
+        <p>RATING</p>
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+          </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    
+        
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
+
+        // TODO: Replace the following with your app's Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDooJTS_-2Rf5ZaqMTLeFWiCJdLxo0vKG0",
+            authDomain: "updog-74cf9.firebaseapp.com",
+            projectId: "updog-74cf9",
+            storageBucket: "updog-74cf9.appspot.com",
+            messagingSenderId: "856245107877",
+            appId: "1:856245107877:web:6b039fe3eedd2c9341214c",
+            measurementId: "G-1BN6G28E5L"
+        };
+
+        const app = initializeApp(firebaseConfig);
+      </script>
+
+    </script>
+
+    <script src="../__src/js/login.js"></script>
+</body>
+</html>
