@@ -10,6 +10,8 @@ function createRoom() {
         Tags: tags,
         MaleParticipants: 0,
         FemaleParticipants: 0,
+        Comments: "",
+        Ratings: 0,
     })
     .then(() => {
         console.log("Document successfully written!");
