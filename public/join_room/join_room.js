@@ -64,7 +64,7 @@ function joinRoom(roomid) {
 
     db.collection("rooms").doc(room)
     .onSnapshot((doc) => {
-        var participants = doc.data().MaleParticipants + doc.data().FemaleParticipants;
+        var participants = doc.data().MaleParticipants + doc.data().FemaleParticipants + 1;
 
         document.getElementById("currently").innerHTML = "Currently in room: " + participants + "/20";
 

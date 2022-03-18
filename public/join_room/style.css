@@ -181,9 +181,9 @@ body {
     height: auto;
     width: 10%;
     position: absolute;
-    top: 55%;
+    top: 50%;
     transform: translateY(40%);
-    left: 21%;
+    left: 31%;
     object-position: center top;
     display: none;
 }

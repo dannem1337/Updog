@@ -22,6 +22,19 @@ window.onload = () => {
         var buttonCode =
             `<button onclick="backToStart()" id="start" >Back to start</button>`;
             document.getElementById("roomWrapper").innerHTML += buttonCode;
+    });    
+
+}
+
+function backToStart() {
+
+    const db = firebase.firestore();
+
+    db.collection("rooms").doc("Henke").delete().then(() => {
+        console.log("Document successfully deleted!");
+        location.href = "../create_room";
+    }).catch((error) => {
+        console.error("Error removing document: ", error);
     });
 
 }
