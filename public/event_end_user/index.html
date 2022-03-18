@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../__src/css/createRoom.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <title>Updog</title>
@@ -31,16 +31,30 @@
     <!-- Test account: Username: test.account@mail.com Password: admin1 -->
 
     <!-- TODO: add onclick="createRoom in js"-->
-    <div id="createRoomWrapper">
-        <input type="text" id="roomName" placeholder="Room name">
-        <input type="text" id="tags" placeholder="Tags">
-        <button onclick="createRoom()" id="roomBtn">Create room</button>
-    </div>
+    <button onclick="profile()" id="profile" aria-expanded="false">
+        <p id="name"></p>
+        <span class="dot"></span>
+    </button>
 
-    <div id="waitRoomWrapper">
-        <p class="participants" id="males">Male participants: 0/10</p>
-        <p class="participants" id="females">Female participants: 0/10</p>
-        <button onclick="startRoom()" id="startBtn">Start event</button>
+    <div id="roomWrapper">
+        <p>YOUR MATCHES</p>
+        <br>
+        <div id="room1">
+            <span id="dot"></span>
+            <p id="name"> Danyal </p> 
+            <button onclick="shareContacts(this)" id="activeBtn" class="shareContacts">SHARE CONTACTS </button>
+        </div>
+        <div id="room1">
+            <span id="dot"></span>
+            <p id="name"> Malin </p> 
+            <button onclick="shareContacts(this)" id="activeBtn" class="shareContacts" > SHARE CONTACTS </button>
+        </div>
+        <div id="room1">
+            <span id="dot"></span>
+            <p id="name"> Julia </p> 
+            <button onclick="shareContacts(this)" id="activeBtn" class="shareContacts"> SHARE CONTACTS </button>
+        </div>
+        <button onclick="backToStart()" id="start" >Back to start</button>
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -83,6 +97,6 @@
         });
       </script>
 
-    <script src="create_room.js"></script>
+    <script type="text/javascript" src="shareContacts.js"></script>
 </body>
 </html>

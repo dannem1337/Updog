@@ -7,12 +7,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <title>Updog</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.6.8/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.6.8/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.8/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 </head>
 <body>
 
     <!-- Test account: Username: test.account@mail.com Password: admin1 -->
     <div id="dogImg">
-        <img src="../../resources/Updog Desktop Logo.svg" id="upDog">
+        <img src="../resources/Updog Desktop Logo.svg" id="upDog">
     </div>
 
     <div id="menuWrapper">
@@ -20,34 +38,45 @@
         <button onclick="adminMode()" id="adminBtn"> Admin </button>
     </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-    
-        
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-analytics.js";
-        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.5/firebase-auth.js";
-
-        // TODO: Replace the following with your app's Firebase project configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyDooJTS_-2Rf5ZaqMTLeFWiCJdLxo0vKG0",
-            authDomain: "updog-74cf9.firebaseapp.com",
-            projectId: "updog-74cf9",
-            storageBucket: "updog-74cf9.appspot.com",
-            messagingSenderId: "856245107877",
-            appId: "1:856245107877:web:6b039fe3eedd2c9341214c",
-            measurementId: "G-1BN6G28E5L"
-        };
-
-        const app = initializeApp(firebaseConfig);
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const loadEl = document.querySelector('#load');
+          // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+          // // The Firebase SDK is initialized and available here!
+          //
+          // firebase.auth().onAuthStateChanged(user => { });
+          // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+          // firebase.firestore().doc('/foo/bar').get().then(() => { });
+          // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+          // firebase.messaging().requestPermission().then(() => { });
+          // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+          // firebase.analytics(); // call to activate
+          // firebase.analytics().logEvent('tutorial_completed');
+          // firebase.performance(); // call to activate
+          //
+          // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+  
+          try {
+            let app = firebase.app();
+            let features = [
+              'auth', 
+              'database', 
+              'firestore',
+              'functions',
+              'messaging', 
+              'storage', 
+              'analytics', 
+              'remoteConfig',
+              'performance',
+            ].filter(feature => typeof app[feature] === 'function');
+            loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+          } catch (e) {
+            console.error(e);
+            loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+          }
+        });
       </script>
 
-    </script>
-
-    <script src="../__src/js/login.js"></script>
+    <script src="start_menu.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../__src/css/createRoom.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <title>Updog</title>
@@ -31,20 +31,33 @@
     <!-- Test account: Username: test.account@mail.com Password: admin1 -->
 
     <!-- TODO: add onclick="createRoom in js"-->
-    <div id="createRoomWrapper">
-        <input type="text" id="roomName" placeholder="Room name">
-        <input type="text" id="tags" placeholder="Tags">
-        <button onclick="createRoom()" id="roomBtn">Create room</button>
+    <div id="header">
+        <img src="../resources/dog.png" id="upDog">
+        <div id="speakBubble">
+            <p id="text">ROUND 1 DONE!</p>
+        </div>
     </div>
 
-    <div id="waitRoomWrapper">
-        <p class="participants" id="males">Male participants: 0/10</p>
-        <p class="participants" id="females">Female participants: 0/10</p>
-        <button onclick="startRoom()" id="startBtn">Start event</button>
+    <div id="roomWrapper">
+        <p>RATING</p>
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+          </div>
+          <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Write a comment here..."></textarea>
+          <button onclick="nextRound()" id="next" >Next Round</button>
     </div>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script>
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script>
         document.addEventListener('DOMContentLoaded', function() {
           const loadEl = document.querySelector('#load');
           // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
@@ -83,6 +96,6 @@
         });
       </script>
 
-    <script src="create_room.js"></script>
+    <script src="user_end_round.js"></script>
 </body>
 </html>

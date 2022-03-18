@@ -16,7 +16,7 @@ body {
     background: #F0F3FD;
 }
 
-#roomWrapper {
+#createRoomWrapper {
     position: absolute;
     color: #5976CA;
     background: #FFFFFF;
@@ -45,7 +45,7 @@ body {
     margin-bottom: 25px;
 }
 
-#roomWrapper input {
+#createRoomWrapper input {
     color: #5976CA;
     font-size: 1.5rem;
     border: none;
@@ -55,12 +55,12 @@ body {
     margin-bottom: 25px;
 }
 
-#roomWrapper input:focus {
+#createRoomWrapper input:focus {
     border-bottom: 3px solid #C958B0;
     outline: none;
 }
 
-#roomWrapper input::placeholder {
+#createRoomWrapper input::placeholder {
     color: #5976CA;
     opacity: 0.9;
 }
@@ -86,8 +86,48 @@ body {
     transform: scale(1.048);
 }
 
+#waitRoomWrapper {
+    display: none;
+    position: absolute;
+    color: #5976CA;
+    background: #FFFFFF;
+    border-radius: 30px;
+    padding: 60px 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    height: min-content;
+    width: 400px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    transition: 0.4s ease;
+}
+
+.participants {
+    font-size: 1.7rem;
+    margin-bottom: 5%;
+}
+
+#startBtn {
+    background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    width: max-content;
+    padding: 10px 50px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased; 
+    transition: 0.2s ease;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 @media only screen and (max-width: 400px) {
     .roomWrapper {
         padding: 10px 10px;
     }
 }
+

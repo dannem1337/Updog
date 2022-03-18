@@ -56,6 +56,14 @@ body {
     float: right;
   }
 
+#dot {
+    height: 50px;
+    width: 50px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: inline-block;
+}
+
 #roomWrapper {
     font-size: 3rem;
     position: absolute;
@@ -76,9 +84,13 @@ body {
     transition: 0.4s ease;
 }
 
-.room {
+#ratings {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+#comments {
     color: #5976CA;
-    display: grid;
     font-size: 1.5rem;  
     background: #F0F3FD;
     border-radius: 1.25rem;
@@ -87,109 +99,32 @@ body {
     text-align: right;
     padding-left: 30px;
     margin-bottom: 1.25rem;
-    grid-template-columns: 45% 30% 25%;
-    grid-template-rows: 100%;
-    grid-template-areas: 
-    "name . number . join";
-    align-items: center;
 }
 
-.room #eventName {
-    text-align: left;
-    width: 100%t;
-    grid-area: "name";
-}
-
-.room #noPart {
-    text-align: left;
+#comments #comment {
+    text-align: center;
     width: 100%;
-    grid-area: "number";
 }
 
-.joinBtn {
-    grid-area: "join";
-    background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
+#start {
     border: none;
-    color: #FFFFFF;
     font-size: 1.4rem;
     cursor: pointer;
+    background: linear-gradient(180deg, #5A76CA 0%, #C958B0 100%);
+    color: #FFFFFF;
     border-radius: 15px;
-    width: max-content;
-    padding: 10px 50px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 80%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: antialiased; 
     transition: 0.2s ease;
     float: right;
 }
 
-.joinBtn:hover {
+#start:hover {
     transform: scale(1.048);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#waitRoomWrapper {
-    display: none;
-    position: absolute;
-    color: #5976CA;
-    background: #FFFFFF;
-    border-radius: 30px 30px 30px 00px;
-    padding: 30px 30px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    height: min-content;
-    width: 400px;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    transition: 0.4s ease;
-}
-
-#wait {
-    font-size: 1.8rem;
-    top: 40%;
-    margin-bottom: 40px;
-    
-}
-
-#currently {
-    font-size: 1rem;
-    top: 80%;
-    margin-bottom: 0;
-}
-
-#roomBtn {
-    background: grey;
-    border: none;
-    color: #FFFFFF;
-    font-size: 1.4rem;
-    cursor: pointer;
-    border-radius: 15px;
-    margin-bottom: 15px;
-    width: max-content;
-    padding: 10px 50px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: antialiased; 
-    transition: 0.2s ease;
-}
-
-#roomBtn:hover {
-    transform: none;
-}
-
-#logo {
-    height: auto;
-    width: 10%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(40%);
-    left: 31%;
-    object-position: center top;
-    display: none;
-}
-
-#countdown {
-    margin-top: 50px;
 }
 
 @media only screen and (max-width: 400px) {
